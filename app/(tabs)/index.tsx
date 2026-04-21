@@ -1,11 +1,12 @@
 import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { Platform, Pressable, StyleSheet } from 'react-native';
 
 import { HelloWave } from '@/components/hello-wave';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
+
 
 export default function HomeScreen() {
   return (
@@ -21,6 +22,11 @@ export default function HomeScreen() {
         <ThemedText type="title">Olá!</ThemedText>
         <HelloWave />
       </ThemedView>
+              <Link href="/modal" asChild>
+          <Pressable>
+            <ThemedText type="link">Abrir Modal</ThemedText>
+          </Pressable>
+        </Link>
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it!</ThemedText>
         <ThemedText>
